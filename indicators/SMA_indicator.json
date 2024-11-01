@@ -1,0 +1,21 @@
+{
+  "type": "indicator",
+  "name": "indicator:SMA",
+  "data": {
+    "createdAt": 1623024000001,
+    "name": "SMA {shortLength} {mediumLength} {longLength} {veryLongLength}",
+    "displayName": "SMA 8 21 50 200",
+    "script": "line(sma($price.close, options.shortLength), color=options.shortColor)\nline(sma($price.close, options.mediumLength), color=options.mediumColor)\nline(sma($price.close, options.longLength), color=options.longColor)\nline(sma($price.close, options.veryLongLength), color=options.veryLongColor)",
+    "options": {
+      "priceScaleId": "right",
+      "shortLength": 8,
+      "mediumLength": 21,
+      "longLength": 50,
+      "veryLongLength": 200,
+      "shortColor": "#4caf50",
+      "mediumColor": "#f23645",
+      "longColor": "#fbc02d",
+      "veryLongColor": "#ffffff"
+    }
+  }
+}
