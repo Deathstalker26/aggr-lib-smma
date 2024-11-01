@@ -1,0 +1,30 @@
+{
+    "type": "indicator",
+    "name": "indicator:SMMA Multiple Periods",
+    "data": {
+        "createdAt": 1623024000001,
+        "description": "SMMA with periods 8, 21, 50, and 200 for trend analysis",
+        "script": [
+            "smma_8 = smoothed(source(close), length=8)",
+            "smma_21 = smoothed(source(close), length=21)",
+            "smma_50 = smoothed(source(close), length=50)",
+            "smma_200 = smoothed(source(close), length=200)",
+            "line(smma_8, title='SMMA 8', color='#4caf50')",
+            "line(smma_21, title='SMMA 21', color='#f23645')",
+            "line(smma_50, title='SMMA 50', color='#fbc02d')",
+            "line(smma_200, title='SMMA 200', color='#ffffff')"
+        ],
+        "options": {
+            "priceFormat": {
+                "type": "price"
+            },
+            "priceScaleId": "smma",
+            "colors": {
+                "smma_8": "#4caf50",
+                "smma_21": "#f23645",
+                "smma_50": "#fbc02d",
+                "smma_200": "#ffffff"
+            }
+        }
+    }
+}
